@@ -59,12 +59,15 @@ public class EmployeeService implements EmployeeInterface {
 
     // +++++++++++++++++ Заполняем список сотрудниками +++++++++++++++++++++++++++++
     public List<Employee> firstFillOfList() {
-        Employee e = new Employee("Oleg", "Krylov");
-        empl.add(0, e);
-        Employee e1 = new Employee("Ivan", "Ivanov");
-        empl.add(1, e1);
-        Employee e2 = new Employee("Petr", "Petrov");
-        empl.add(2, e2);
+        Employee[] e = {
+                new Employee("Oleg", "Krylov"),
+                new Employee("Ivan", "Ivanov"),
+                new Employee("Petr", "Petrov")};
+        if (empl.isEmpty()) {
+            for (int i = 0; i < sizeList - 1; i++) {
+                empl.add(e[i]);
+            }
+        }
         return empl;
     }
 }
