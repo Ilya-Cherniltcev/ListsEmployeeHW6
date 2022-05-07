@@ -43,8 +43,7 @@ public class EmployeeController {
 
     // ----------  Первоначальное заполнение списка
     @GetMapping(path = "/fill")
-    public String firstFill(@RequestParam(required = false) String s) {
-        employeeService.firstFillOfList();
-        return "Список заполнен!";
+    public List<Employee> firstFill(@RequestParam(required = false) String s) {
+        return employeeService.firstFillOfList();
     }
 }

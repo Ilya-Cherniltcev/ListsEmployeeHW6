@@ -11,6 +11,6 @@ public interface EmployeeInterface {
 
     List<Employee> printAllEmployees();
 
-    void firstFillOfList();
+    List<Employee> firstFillOfList();
 
 }
