@@ -7,13 +7,20 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 @Service
 public class EmployeeService implements EmployeeInterface {
-    private int sizeList = 4;
-    private List<Employee> empl = new ArrayList(sizeList);
+    private int sizeList = 5;
+    // ****************************     ПЕРВОНАЧАЛЬНОЕ ЗАПОЛНЕНИЕ СПИСКА **********
+    private List<Employee> empl = new ArrayList<>(Arrays.asList(
+            new Employee("Oleg", "Krylov"),
+            new Employee("Ivan", "Ivanov"),
+            new Employee("Petr", "Petrov")));
+    // ************************************************************************
+
 
     // +++++++++++++++++++++++ Добавляем нового сотрудника +++++++++++++++++++++++++++
     public Employee addNewEmployee(String firstName, String lastName) {
